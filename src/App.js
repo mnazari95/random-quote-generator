@@ -32,6 +32,8 @@ class App extends React.Component {
   }
   
   render() {
+
+    const tweetURL = "https://www.twitter.com/intent/tweet?&text=" + this.state.quote + " - " + this.state.author;
     return (
       <div id="quote-box">
         <div>
@@ -43,7 +45,7 @@ class App extends React.Component {
           </div>
         </div>
         <div id="btn-wrapper">
-          <a id="tweet-quote" class="btn btn-primary" href="twitter.com/intent/tweet" target="_top">tweet quote</a>
+          <a id="tweet-quote" class="btn btn-primary" href={tweetURL} target="_top">tweet quote</a>
         <button id="new-quote" class="btn btn-primary" onClick={this.fetchQuote}>New quote</button>
         </div>
       </div>
